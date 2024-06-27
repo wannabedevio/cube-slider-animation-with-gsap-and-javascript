@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Cube Slider Animation with GSAP and JavaScript - DEMO - wannabedev.io</title>
+		<meta name="description" content="Discover how to craft a cube slider animation using GSAP and JavaScript. This tutorial provides step-by-step instructions for creating dynamic sliders with text animations." />
+		<meta name="keywords" content="slider, animation, cube, javascript, gsap, 3d, slideshow, carousel" />
+		<meta name="author" content="Mirza Hodzic" />
+		<link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJR1BPWFF0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SJR1BPWFF0', {
+        page_path: window.location.pathname,
+      });
+    </script>
+
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="hi active" data-lat="51.5098° N" data-lang="-0.1180° E">
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Hello</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Hello</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Hello</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Hello</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">From</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">From</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">From</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">From</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">London</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">London</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">London</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">London</p>
+          </div>
+        </div>
+      </div>
+      <div class="hi" data-lat="52.5200 ° N" data-lang="13.4049 ° E">
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Hallo</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Hallo</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Hallo</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Hallo</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">aus</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">aus</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">aus</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">aus</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Berlin</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Berlin</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Berlin</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Berlin</p>
+          </div>
+        </div>
+      </div>
+      <div class="hi" data-lat="40.4167 ° N" data-lang="-3.7037 ° E">
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">¡Hola</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">¡Hola</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">¡Hola</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">¡Hola</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">desde</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">desde</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">desde</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">desde</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Madrid</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Madrid</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Madrid</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Madrid</p>
+          </div>
+        </div>
+      </div>
+      <div class="hi" data-lat="24.7742 ° N" data-lang="46.7385 ° E">
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Ahlan</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Ahlan</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Ahlan</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Ahlan</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">min</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">min</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">min</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">min</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Riyadh</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Riyadh</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Riyadh</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Riyadh</p>
+          </div>
+        </div>
+      </div>
+      <div class="hi" data-lat="19.0760 ° N" data-lang="72.8774 ° E">
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Mumbai</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Mumbai</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Mumbai</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Mumbai</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">se</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">se</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">se</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">se</p>
+          </div>
+        </div>
+        <div class="hi__cuboid">
+          <div class="face face--front">
+            <p class="hi__word">Namaste</p>
+          </div>
+          <div class="face face--back">
+            <p class="hi__word">Namaste</p>
+          </div>
+          <div class="face face--top">
+            <p class="hi__word">Namaste</p>
+          </div>
+          <div class="face face--bottom">
+            <p class="hi__word">Namaste</p>
+          </div>
+        </div>
+      </div>
+      <div class="hi__base">
+        <div class="hi__base-plate"></div>
+        <p class="hi__location hi__location--lat">53.3454° N</p>
+        <p class="hi__location hi__location--long">-6.3070° E</p>
+      </div>
+    </div>
+    
+    <div class="collection">
+      <a class="collection__link" href="https://wannabedev.io/tutorials/cube-slider-animation-with-gsap-and-javascript">Back to Article<span></span></a>
+    </div>
+
+    <div class="collection collection__bottom">
+      <a class="collection__link" href="https://wannabedev.io">HOME<span></span></a>
+    </div>
+    
+    <div class="slider-controls">
+      <button class="slider-prev">Prev</button>
+      <button class="slider-next">Next</button>
+    </div>    
+
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+    <script src="assets/js/demo.js"></script>
+
+  </body>
+</html>
